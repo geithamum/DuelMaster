@@ -988,7 +988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &832860067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2726,7 +2726,7 @@ MonoBehaviour:
   spawnDistance: 2
   menu: {fileID: 832860066}
   showButton:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Show Button
       m_Type: 0
@@ -2744,7 +2744,7 @@ MonoBehaviour:
         m_Action: Show Button
         m_Flags: 0
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3624288774370442334, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1001 &5769199021740325618
 PrefabInstance:
   m_ObjectHideFlags: 0
