@@ -1,4 +1,3 @@
-
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement; // For scene loading
@@ -29,7 +28,7 @@ public class MainMenuController : MonoBehaviour
     private void OnPlaygroundButtonClick()
     {
         // Load the Sample scene
-        SceneManager.LoadScene("Sample");
+        SceneManager.LoadScene("Playground");
     }
     private void OnMultiplayerButtonClick()
     {
