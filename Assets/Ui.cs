@@ -44,7 +44,7 @@ public class MainMenuController : MonoBehaviour
     private void OnSingleplayerButtonClick()
     {
         // Load the Sample scene
-        SceneManager.LoadScene("Singleplayer");
+        SceneManager.LoadScene("Singleplayer/Singleplayer");
     }
 
 }
