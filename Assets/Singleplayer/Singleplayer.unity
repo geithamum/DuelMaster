@@ -265,7 +265,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 630bbfbe73e3f0b4a9f57d8c8d7b4c80, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 125557470}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
@@ -275,6 +278,72 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
   m_PrefabInstance: {fileID: 97383284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &125557469
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 97383285}
+    m_Modifications:
+    - target: {fileID: 2080891870911190411, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179130585789348067, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 975170435
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.261
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.411
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+--- !u!4 &125557470 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9193368600086353506, guid: 1ea2b1ec243cbf741a79e0d042ef44ee, type: 3}
+  m_PrefabInstance: {fileID: 125557469}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &153062919
 GameObject:
@@ -715,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bb6b2ea5d8f45eb4ab1027b67d647792, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1082271958561512970, guid: bb6b2ea5d8f45eb4ab1027b67d647792, type: 3}
       propertyPath: m_Layer
@@ -1144,7 +1213,7 @@ GameObject:
   - component: {fileID: 1851980926}
   - component: {fileID: 1851980925}
   - component: {fileID: 1851980924}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
