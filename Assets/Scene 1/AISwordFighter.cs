@@ -29,8 +29,11 @@ public class AISwordFighter : MonoBehaviour
 
     private void MoveTowardsPlayer()
     {
-        // Move AI towards the player
+        // Calculate direction towards the player, but set z to 0 to restrict movement to the x-y plane
         Vector3 direction = (player.position - transform.position).normalized;
+        direction.y = 0;  // Make sure there's no movement along the z-axis
+
+        // Move AI towards the player in the x-y plane only
         transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
     }
 
