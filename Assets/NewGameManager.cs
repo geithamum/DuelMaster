@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class GamePauseManager : MonoBehaviour
+public class NewGameManager : MonoBehaviour
 {
+    public Button resumeButton;    // Reference to the Resume button
+    public Button quitButton;      // Reference to the Quit button
     public Button playgroundButton;
     public Button MultiplayerButton;
     public Button SingleplayerButton;
@@ -16,10 +18,18 @@ public class GamePauseManager : MonoBehaviour
     public GameObject menu;
     public InputActionProperty showButton;
 
-
     // Start is called before the first frame update
     void Start()
     {
+        if (resumeButton != null)
+        {
+            resumeButton.onClick.AddListener(ResumeGame); // Add listener for Resume button
+        }
+
+        if (quitButton != null)
+        {
+            quitButton.onClick.AddListener(QuitGame); // Add listener for Quit button
+        }
         if (playgroundButton != null)
         {
             playgroundButton.onClick.AddListener(OnPlaygroundButtonClick);
@@ -32,8 +42,6 @@ public class GamePauseManager : MonoBehaviour
         {
             SingleplayerButton.onClick.AddListener(OnSingleplayerButtonClick);
         }
-
-
     }
 
     // Update is called once per frame
@@ -49,7 +57,6 @@ public class GamePauseManager : MonoBehaviour
         menu.transform.LookAt(new Vector3(head.position.x, menu.transform.position.y, head.position.z));
         menu.transform.forward *= -1;
     }
-
 
     private void OnPlaygroundButtonClick()
     {
@@ -67,4 +74,27 @@ public class GamePauseManager : MonoBehaviour
         SceneManager.LoadScene("Singleplayer/Singleplayer");
     }
 
+    void ResumeGame()
+    {
+        // Unpause the game and hide the PauseMenu
+        Debug.Log("Resumed");
+        Time.timeScale = 1;  // Unpause the game
+
+        // Unload the PauseMenu scene
+        SceneManager.UnloadSceneAsync("PauseMenu");
+    }
+
+    // Method to be called when the Quit button is clicked
+    void QuitGame()
+    {
+        // Print "Quit" to the Unity console for debugging purposes
+        Debug.Log("Quit");
+
+        // Close the game (this will stop the play mode in the Unity Editor, or quit in a built application)
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false; // Stops the game in the editor
+#else
+            Application.Quit(); // Quit the game in a built application
+#endif
+    }
 }

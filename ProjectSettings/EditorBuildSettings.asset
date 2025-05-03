@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PauseMenu.unity
     guid: b887b5a896f7a974da8af1055a4eb2fa
+  - enabled: 1
+    path: Assets/NewPauseGame.unity
+    guid: 80fe962a3524c9e4a9479d3396659164
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: efb7b87eb8ecd9d46b3a0351222f323f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fba6072275013e6448e381f83d131b7f, type: 2}

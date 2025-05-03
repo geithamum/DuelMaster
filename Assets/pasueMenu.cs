@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("starts");
         // Ensure the buttons are set up to call the correct methods when clicked
         if (resumeButton != null)
         {
