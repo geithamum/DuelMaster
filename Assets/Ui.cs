@@ -9,6 +9,7 @@ public class MainMenuController : MonoBehaviour
 {
     // Reference to the Playground button
     public Button playgroundButton;
+    public Button MultiplayerButton;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,10 @@ public class MainMenuController : MonoBehaviour
         {
             playgroundButton.onClick.AddListener(OnPlaygroundButtonClick);
         }
+        if (MultiplayerButton != null)
+        {
+            MultiplayerButton.onClick.AddListener(OnMultiplayerButtonClick);
+        }
     }
 
     // This method will be called when the Playground button is clicked
@@ -25,5 +30,10 @@ public class MainMenuController : MonoBehaviour
     {
         // Load the Sample scene
         SceneManager.LoadScene("Sample");
+    }
+    private void OnMultiplayerButtonClick()
+    {
+        // Load the Sample scene
+        SceneManager.LoadScene("multiplayer");
     }
 }
