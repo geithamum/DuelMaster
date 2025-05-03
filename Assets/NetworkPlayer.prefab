@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2226233547034609325}
   - component: {fileID: 3155054162294986202}
   - component: {fileID: 195101964605104671}
+  - component: {fileID: 6652313471768584839}
   m_Layer: 0
   m_Name: NetworkPlayer
   m_TagString: Untagged
@@ -111,6 +112,18 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &6652313471768584839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538035154535212066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d596321b6458b479634c53bfd67b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4347934916832694550
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +325,7 @@ GameObject:
   - component: {fileID: 1808472399966701949}
   - component: {fileID: 3000174000698529314}
   - component: {fileID: 8780056307887357462}
+  - component: {fileID: 1421030028272887256}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -407,6 +421,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1421030028272887256
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125086790930427982}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6412622938314821822
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/XRI_Examples/Scenes/XRI_Examples_Main.unity
     guid: ba755f5a181505a4799b21685d4c7576
-  - enabled: 1
+  - enabled: 0
     path: Assets/UI.unity
     guid: db7d11639d0f3c047885711571193160
-  - enabled: 1
+  - enabled: 0
     path: Assets/Sample.unity
     guid: be7ae0799312cfa4ab5f3aca2c48081c
   - enabled: 1
