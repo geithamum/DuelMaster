@@ -335,8 +335,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   velocityEstimator: {fileID: 1364001459578289593}
-  cutForce: 2000
-  crossSectionMaterial: {fileID: 0}
+  cutForce: 1000
+  crossSectionMaterial: {fileID: 2100000, guid: f5ccd52dc494e054fbe7d7161dcabe25, type: 2}
 --- !u!114 &3179130585789348067
 MonoBehaviour:
   m_ObjectHideFlags: 0
