@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.Netcode;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NetworkConnect : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class NetworkConnect : MonoBehaviour
     private GameObject sword2;
 
     // Start host (server)
-    public void Create()
+    public void CreateHost()
     {
         // Start the server in host mode
         NetworkManager.Singleton.StartHost();
@@ -87,36 +88,8 @@ public class NetworkConnect : MonoBehaviour
         // Ensure that we are only spawning players and swords when the second player connects
         if (NetworkManager.Singleton.IsServer && NetworkManager.Singleton.ConnectedClients.Count == 2)
         {
-            SpawnPlayersAndSwords();
+            // Switch to the Game scene after both players have connected
+            SceneManager.LoadScene("GameScene");
         }
     }
-
-    // Method to spawn players and swords
-    private void SpawnPlayersAndSwords()
-    {
-        int clientIndex = 0;
-
-        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
-        {
-            Vector3 spawnPos = clientIndex == 0 ? player1Spawn.position : player2Spawn.position;
-            Quaternion spawnRot = clientIndex == 0 ? player1Spawn.rotation : player2Spawn.rotation;
-
-            GameObject player = Instantiate(playerPrefab, spawnPos, spawnRot);
-            var netObj = player.GetComponent<NetworkObject>();
-            netObj.SpawnAsPlayerObject(client.ClientId);  // This ensures the client "owns" their own object
-
-            // Spawn and attach a sword
-            Vector3 swordPos = clientIndex == 0 ? sword1Spawn.position : sword2Spawn.position;
-            Quaternion swordRot = clientIndex == 0 ? sword1Spawn.rotation : sword2Spawn.rotation;
-
-            GameObject sword = Instantiate(swordPrefab, swordPos, swordRot);
-            sword.GetComponent<NetworkObject>().SpawnWithOwnership(client.ClientId); // Optional: give them sword ownership
-            sword.transform.SetParent(player.transform);
-
-            clientIndex++;
-        }
-
-        Debug.Log("Spawned players and swords per client.");
-    }
-
 }
