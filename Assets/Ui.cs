@@ -9,6 +9,7 @@ public class MainMenuController : MonoBehaviour
     // Reference to the Playground button
     public Button playgroundButton;
     public Button MultiplayerButton;
+    public Button SingleplayerButton;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,11 @@ public class MainMenuController : MonoBehaviour
         {
             MultiplayerButton.onClick.AddListener(OnMultiplayerButtonClick);
         }
+        if (SingleplayerButton != null)
+        {
+            SingleplayerButton.onClick.AddListener(OnSingleplayerButtonClick);
+        }
+        
     }
 
     // This method will be called when the Playground button is clicked
@@ -35,4 +41,10 @@ public class MainMenuController : MonoBehaviour
         // Load the Sample scene
         SceneManager.LoadScene("multiplayer");
     }
+    private void OnSingleplayerButtonClick()
+    {
+        // Load the Sample scene
+        SceneManager.LoadScene("Singleplayer");
+    }
+
 }
