@@ -18,6 +18,9 @@ public class AISwordFighter : MonoBehaviour
 
     public DeathMenu deathMenu;
 
+    private float timer = 0f;
+    public float interval = 5f;
+
     private void Update()
     {
         if (player == null || isDead) return;
@@ -35,6 +38,14 @@ public class AISwordFighter : MonoBehaviour
         {
             Debug.Log("We do get to the attack state");
             AttackPlayer();
+        }
+        timer += Time.deltaTime;
+
+        if (timer >= interval)
+        {
+            Debug.Log("Increased difficulty");
+            timer = 0f;
+            moveSpeed += 0.1f;
         }
     }
 

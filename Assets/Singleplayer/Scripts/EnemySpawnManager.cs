@@ -26,7 +26,7 @@ public class EnemySpawnManager : MonoBehaviour
         if (timer >= interval)
         {
             timer = 0f;
-            spawnInterval *= 0.25f;
+            spawnInterval *= 0.15f;
         }
     }
 

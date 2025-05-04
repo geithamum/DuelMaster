@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SliceableObject : MonoBehaviour
 {
+    public AudioClip deathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,9 @@ public class SliceableObject : MonoBehaviour
     }
     public void Slice()
     {
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
         Destroy(this.gameObject);
+
     }
 
 }

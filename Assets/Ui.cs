@@ -39,7 +39,7 @@ public class MainMenuController : MonoBehaviour
     private void OnMultiplayerButtonClick()
     {
         // Load the Sample scene
-        SceneManager.LoadScene("multiplayer");
+        SceneManager.LoadScene("LobbyScene");
     }
     private void OnSingleplayerButtonClick()
     {
