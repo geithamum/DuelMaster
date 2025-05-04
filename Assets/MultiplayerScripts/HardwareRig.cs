@@ -22,23 +22,19 @@ public class HardwareRig : MonoBehaviour, INetworkRunnerCallbacks
 
 
     #region INetworkRunnerCallbacks
+    public Transform torsoTransform; // Add this field
+
     void INetworkRunnerCallbacks.OnInput(NetworkRunner runner, NetworkInput input)
     {
         RigState xrRigState = new RigState();
 
-        xrRigState.HeadsetPosition = headTransform.position;
-        xrRigState.HeadsetRotation = headTransform.rotation;
-
         xrRigState.PlayerPosition = playerTransform.position;
         xrRigState.PlayerRotation = playerTransform.rotation;
 
-        xrRigState.LeftHandPosition = leftHandTransform.position;
-        xrRigState.LeftHandRotation = leftHandTransform.rotation;
+        xrRigState.TorsoPosition = torsoTransform.position; // Add this
+        xrRigState.TorsoRotation = torsoTransform.rotation; // Add this
 
-        xrRigState.RightHandPosition = rightHandTransform.position;
-        xrRigState.RightHandRotation = rightHandTransform.rotation;
-
-        input.Set(xrRigState);
+        // ... rest of the existing code
     }
     #endregion
 
@@ -142,12 +138,13 @@ public struct RigState : INetworkInput
     public Vector3 PlayerPosition;
     public Quaternion PlayerRotation;
 
+    public Vector3 TorsoPosition; // Add this
+    public Quaternion TorsoRotation; // Add this
+
     public Vector3 HeadsetPosition;
     public Quaternion HeadsetRotation;
-
     public Vector3 LeftHandPosition;
     public Quaternion LeftHandRotation;
-
     public Vector3 RightHandPosition;
     public Quaternion RightHandRotation;
 }
