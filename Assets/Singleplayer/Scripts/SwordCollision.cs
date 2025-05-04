@@ -13,6 +13,7 @@ public class SwordCollision : MonoBehaviour
             if (enemy != null)
             {
                 enemy.OnHitBySword();  // Call the method to stop movement and start despawn
+                Debug.LogError("Player hit enemy");
             }
         }
     }

@@ -25,7 +25,7 @@ public class EnemySpawnManager : MonoBehaviour
         // Calculate the spawn position at a fixed radius from the player
         Vector3 spawnPosition = new Vector3(
             player.position.x + randomDirection.x * spawnRadius,
-            player.position.y + 0.85f,  // Keep the same height as the player
+            player.position.y + 0.51f,  // Keep the same height as the player
             player.position.z + randomDirection.y * spawnRadius
         );
 

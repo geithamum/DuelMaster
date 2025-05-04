@@ -1,27 +1,41 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject swordPrefab;  // Reference to the sword prefab
-    public Transform swordHolder;   // Reference to where you want to attach the sword (usually a hand or hip position)
+    public GameObject swordPrefab;
+    public Transform swordHolder;
+
+    public Vector3 swordLocalPosition = Vector3.zero;
+    public Vector3 swordLocalRotation = Vector3.zero;
 
     private GameObject currentSword;
 
-    void Start()
+    IEnumerator Start()
     {
-        // Check if the sword prefab is assigned
+        yield return new WaitForSeconds(0.1f);
+
         if (swordPrefab != null && swordHolder != null)
         {
-            // Instantiate the sword and set it as a child of the swordHolder (e.g., player's hand)
-            currentSword = Instantiate(swordPrefab, swordHolder.position, swordHolder.rotation, swordHolder);
-
-            // Optionally, you can adjust the sword's position if needed (e.g., in the player's hand)
-            currentSword.transform.localPosition = Vector3.zero;  // Reset position to hold it exactly at the holder
-            currentSword.transform.localRotation = Quaternion.identity;  // Reset rotation to make it face correctly
+            currentSword = Instantiate(swordPrefab);
         }
         else
         {
-            Debug.LogError("SwordPrefab or SwordHolder is not assigned!");
+            Debug.LogError("SwordPrefab or SwordHolder is not assigned.");
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (currentSword != null && swordHolder != null)
+        {
+            // Match position and rotation of the holder
+            currentSword.transform.position = swordHolder.position;
+            currentSword.transform.rotation = swordHolder.rotation;
+
+            // Apply local offset if needed
+            currentSword.transform.localPosition += swordLocalPosition;
+            currentSword.transform.localRotation *= Quaternion.Euler(swordLocalRotation);
         }
     }
 }

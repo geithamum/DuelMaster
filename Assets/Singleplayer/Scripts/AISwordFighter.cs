@@ -44,7 +44,7 @@ public class AISwordFighter : MonoBehaviour
 
     private void AttackPlayer()
     {
-        UnityEngine.Debug.Log("AI is attacking the player!");
+        //UnityEngine.Debug.Log("AI is attacking the player!");
     }
 
     public void OnHitBySword()
