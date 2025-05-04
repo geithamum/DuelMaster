@@ -1,17 +1,22 @@
 using System.Collections;
-using System.Diagnostics;
-using UnityEngine;
 
-[DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+//[DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
 public class AISwordFighter : MonoBehaviour
 {
     public Transform player;  // Reference to the player
     public float moveSpeed = 3f;  // Movement speed
-    public float attackRange = 1.5f;  // Distance to attack
+    public float attackRange = 2.5f;  // Distance to attack
     public float despawnDelay = 4f;  // Time before the enemy despawns after being cut
 
     private bool isDead = false;  // To track if the enemy is dead
     private bool isMoving = true;  // To track if the enemy should be moving
+
+    public DeathMenu deathMenu;
 
     private void Update()
     {
@@ -28,6 +33,7 @@ public class AISwordFighter : MonoBehaviour
         }
         else
         {
+            Debug.Log("We do get to the attack state");
             AttackPlayer();
         }
     }
@@ -44,7 +50,8 @@ public class AISwordFighter : MonoBehaviour
 
     private void AttackPlayer()
     {
-        //UnityEngine.Debug.Log("AI is attacking the player!");
+        SceneManager.LoadScene("UI");
+
     }
 
     public void OnHitBySword()
@@ -56,14 +63,14 @@ public class AISwordFighter : MonoBehaviour
 
         UnityEngine.Debug.Log("Enemy has been cut!");
 
-        StartCoroutine(DespawnAfterDelay(despawnDelay));
+        //StartCoroutine(DespawnAfterDelay(despawnDelay));
     }
 
-    private IEnumerator DespawnAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
-    }
+    //private IEnumerator DespawnAfterDelay(float delay)
+    //{
+    //    yield return new WaitForSeconds(delay);
+    //    Destroy(gameObject);
+    //}
 
     private void FacePlayer()
     {
